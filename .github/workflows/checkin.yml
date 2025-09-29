@@ -70,6 +70,9 @@ jobs:
           balance-hash-
 
     - name: 执行签到
+      env:
+        URL: ${{ secrets.URL }}
+        TOKEN: ${{ secrets.TOKEN }}
       run: |
         git clone https://github.com/millylee/anyrouter-check-in.git
         cp generate_env.sh anyrouter-check-in
