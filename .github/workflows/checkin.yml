@@ -73,6 +73,7 @@ jobs:
       env:
         URL: ${{ secrets.URL }}
         TOKEN: ${{ secrets.TOKEN }}
+        PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
       run: |
         git clone https://github.com/millylee/anyrouter-check-in.git
         cp generate_env.sh anyrouter-check-in
