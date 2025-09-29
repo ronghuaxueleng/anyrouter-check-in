@@ -77,8 +77,8 @@ for ((i=0; i<$ACCOUNT_COUNT; i++)); do
         ACCOUNTS_JSON="$ACCOUNTS_JSON,"
     fi
     
-    # 构建账号JSON对象
-    ACCOUNT_JSON="{\"cookies\":{\"session\":\"$SESSION\"},\"api_user\":\"$API_USER\"}"
+    # 构建账号JSON对象，包含name字段
+    ACCOUNT_JSON="{\"name\":\"$ACCOUNT_NAME\",\"cookies\":{\"session\":\"$SESSION\"},\"api_user\":\"$API_USER\"}"
     ACCOUNTS_JSON="$ACCOUNTS_JSON$ACCOUNT_JSON"
     
     echo "  ✓ 账号: $ACCOUNT_NAME (ID: $API_USER)"
@@ -96,10 +96,6 @@ fi
 cat > .env << EOF
 # AnyRouter 账号配置
 ANYROUTER_ACCOUNTS=$ACCOUNTS_JSON
-
-
-PUSHPLUS_TOKEN=258f84f44f0246c38bffb7d03733a825
-
 EOF
 
 echo ""
