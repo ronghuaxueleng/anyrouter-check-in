@@ -8,7 +8,6 @@ set -e
 # 检查环境变量
 if [ -z "$URL" ]; then
     echo "错误: 请设置环境变量 URL"
-    echo "示例: export URL=49.234.39.232:5555"
     exit 1
 fi
 
