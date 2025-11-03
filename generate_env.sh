@@ -21,7 +21,7 @@ echo "正在从 AnyRouter API 获取账号数据..."
 echo "API 地址: http://$URL"
 
 # 执行curl命令获取数据
-RESPONSE=$(curl --silent --location "http://$URL/api/cookies?include_values=true&domain=anyrouter.top" \
+RESPONSE=$(curl --silent --location "http://$URL/api/cookies?page=1&per_page=200&domain=anyrouter.top" \
     --header "Authorization: Bearer $TOKEN")
 
 if [ $? -ne 0 ]; then
